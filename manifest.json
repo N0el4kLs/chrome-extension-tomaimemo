@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "Maimemo Word Sender",
+  "version": "1.0",
+  "description": "Send selected English words to Maimemo",
+  "permissions": [
+    "contextMenus",
+    "activeTab",
+    "storage",
+    "webRequest"
+  ],
+  "host_permissions": [
+    "https://open.maimemo.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [{
+    "matches": ["<all_urls>"],
+    "js": ["content.js"]
+  }],
+  "action": {
+    "default_popup": "popup.html"
+  }
+} 
